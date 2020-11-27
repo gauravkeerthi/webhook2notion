@@ -14,7 +14,7 @@ def createNotionTask(token, collectionURL, content):
     cv = client.get_collection_view(collectionURL)
     row = cv.collection.add_row()
     row.title = content[0]
-row.email = content[1]
+    row.email = content[1]
 
 
 @app.route('/create_member', methods=['GET'])
