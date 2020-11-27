@@ -21,8 +21,8 @@ def createNotionTask(token, collectionURL, name, email):
 def create_todo():
 
 
-    name = request.GET.get('name')
-    email = request.GET.get('email')
+    name = request.args.get('name')
+    email = request.args.get('email')
     token_v2 = os.environ.get("TOKEN")
     url = os.environ.get("URL")
     createNotionTask(token_v2, url, name,email)
