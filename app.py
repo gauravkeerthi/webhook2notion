@@ -20,13 +20,13 @@ def createNotionTask(token, collectionURL, name, email):
 @app.route('/create_member', methods=['GET'])
 def create_todo():
 
-    member = request.args.get('member')
-    name = member[0]
-    email = member[1]
+
+    name = request.GET.get('name')
+    email = request.GET.get('email')
     token_v2 = os.environ.get("TOKEN")
     url = os.environ.get("URL")
     createNotionTask(token_v2, url, name,email)
-    return f'added {member} to Notion'
+    return f'added {name} to Notion'
 
 
 if __name__ == '__main__':
